@@ -32,14 +32,42 @@ public class PersonFactory {
         InteractPerson ogre = new Monster();
         return (Monster) ogre;
     }
+    public Monster wisp(){
+        InteractPerson wisp = new Monster();
+        return (Monster) wisp;
+    }
+    public Monster amalgamate(){
+        InteractPerson amalgamate = new Monster();
+        return (Monster) amalgamate;
+    }
+    public Monster bat(){
+        InteractPerson bat = new Monster();
+        return (Monster) bat;
+    }
+    public Monster mimic(){
+        InteractPerson mimic = new Monster();
+        return (Monster) mimic;
+    }
+    public Monster mummy(){
+        InteractPerson mummy = new Monster();
+        return (Monster) mummy;
+    }
     // 3 mini bosses
     public Monster champMinotaur(){
         InteractPerson champMinotaur = new Monster();
         return (Monster) champMinotaur;
     }
+    public Monster giantRat(){
+        InteractPerson giantRat = new Monster();
+        return (Monster) giantRat;
+    }
     // 3 boss
     public Monster theDuck(){
         InteractPerson theDuck = new Monster();
         return (Monster) theDuck;
+    }
+    public Monster shadowBrute(){
+        InteractPerson shadowBrute = new Monster();
+        return (Monster) shadwowBrute;
     }
 }
