@@ -3,25 +3,6 @@ package edu.neumont.oop.Model;
 import lib.ConsoleIO;
 
 public class PersonFactory {
-
-    // create character
-    public Character characterCreator(){
-        Character playerCharacter = new Character();
-        boolean bLoop = true;
-        while (bLoop){
-            String name = ConsoleIO.promptForString("Enter your character's name: ", false);
-            int pClass = ConsoleIO.promptForMenuSelection((playerCharacter.getClasses()), false) + 1;
-            int pRace = ConsoleIO.promptForMenuSelection((playerCharacter.getRaces()), false) + 1;
-            Character player = new Character(name, pRace, pClass);
-            boolean cont = ConsoleIO.promptForBoolean(player.getName() + ", the " + player.getPersonRace() + " " + player.getPersonClass() + ". Correct?", "Yes", "No");
-            if (cont){
-                bLoop = false;
-                return player;
-            }
-        }
-        return playerCharacter;
-    }
-
     // 15 monsters
     // 3 mini bosses
     // 3 boss
@@ -89,4 +70,36 @@ public class PersonFactory {
         return (Monster) shadowBrute;
     }
     /////////////////////////////////////////////////////////// Mabel's Creatures Above
+        /////////////////////////////////////////////////////////// Aislin's Creatures Below
+    public Monster ghost(){
+        InteractPerson ghost = new Monster();
+        return (Monster) ghost;
+    }
+    public Monster goblin(){
+        InteractPerson goblin = new Monster();
+        return (Monster) goblin;
+    }
+    public Monster hobgoblin(){
+        InteractPerson hobgoblin = new Monster();
+        return (Monster) hobgoblin;
+    }
+    public Monster bugBear(){
+        InteractPerson bugBear = new Monster();
+        return (Monster) bugBear;
+    }
+    public Monster construct(){
+        InteractPerson construct = new Monster();
+        return (Monster) construct;
+    }
+
+    public Monster banshee(){
+        InteractPerson banshee = new Monster();
+        return (Monster) banshee;
+    }
+
+    public Monster lich(){
+        InteractPerson lich = new Monster();
+        return (Monster) lich;
+    }
+    /////////////////////////////////////////////////////////// Aislin's Creatures Above
 }
