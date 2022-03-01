@@ -1,16 +1,18 @@
 package edu.neumont.oop.Model;
 
 public class Character extends InteractPerson {
-
+    //Properties
     private String personRace;
     private int raceValue;
     private String personClass;
     private int classValue;
 
-    private String[] classes = {"Wizard", "Rogue", "Sorcerer", "Barbarian", "Bard", "Archer", "Cleric", "Druid", "Warrior", "Mage"}; // 9-12
-    private String[] races = {"Human", "Troll", "Grung", "Demon", "Elf", "burb", "Dryad", "Centaur", "Dwarf", "Halfling"}; // 9-12
+    //Arrays
+    private final String[] classes = {"Wizard", "Rogue", "Sorcerer", "Barbarian", "Bard", "Archer", "Cleric", "Druid", "Warrior", "Mage"}; // 9-12
+    private final String[] races = {"Human", "Troll", "Grung", "Demon", "Elf", "burb", "Dryad", "Centaur", "Dwarf", "Halfling"}; // 9-12
 
-    public Character(){};
+    //Constructors
+    public Character(){}
     public Character(String name, int personRace, int personClass){
         setName(name);
         setRaceValue(personRace);
@@ -23,23 +25,10 @@ public class Character extends InteractPerson {
     }
     public String getPersonRace(){
         return personRace;
-    }; // returns race
+    } // returns race
     public void setPersonRace(int raceValue){
-        switch (raceValue){
-            case 1 -> this.personRace = races[0];
-            case 2 -> this.personRace = races[1];
-            case 3 -> this.personRace = races[2];
-            case 4 -> this.personRace = races[3];
-            case 5 -> this.personRace = races[4];
-            case 6 -> this.personRace = races[5];
-            case 7 -> this.personRace = races[6];
-            case 8 -> this.personRace = races[7];
-            case 9 -> this.personRace = races[8];
-            case 10 -> this.personRace = races[9];
-            case 11 -> this.personRace = races[10];
-            case 12 -> this.personRace = races[11];
-        }
-    }; // sets race
+        this.personRace = races[raceValue];
+    } // sets race
 
     public int getRaceValue(){
         return raceValue;
@@ -55,22 +44,9 @@ public class Character extends InteractPerson {
     }
     public String getPersonClass(){
         return personClass;
-    }; // returns Class
+    } // returns Class
     public void setPersonClass(int personClass){
-        switch (personClass){
-            case 1 -> this.personClass = classes[0];
-            case 2 -> this.personClass = classes[1];
-            case 3 -> this.personClass = classes[2];
-            case 4 -> this.personClass = classes[3];
-            case 5 -> this.personClass = classes[4];
-            case 6 -> this.personClass = classes[5];
-            case 7 -> this.personClass = classes[6];
-            case 8 -> this.personClass = classes[7];
-            case 9 -> this.personClass = classes[8];
-            case 10 -> this.personClass = classes[9];
-            case 11 -> this.personClass = classes[10];
-            case 12 -> this.personClass = classes[11];
-        }
+        this.personClass = classes[personClass];
     }
 
     public int getClassValue() {
