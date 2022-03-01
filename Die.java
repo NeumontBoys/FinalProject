@@ -21,7 +21,6 @@ public class Die {
 
     //Roll methods
     public int rollOnce(int sides){
-        //Validate input
         while(sides < 4 || sides > 20){
             System.out.println("Please insert a valid number of sides: 4-20");
             sides = Integer.parseInt(String.valueOf(inputSides));
@@ -33,7 +32,6 @@ public class Die {
     }
 
     public int rollMultiple(int dieCount, int sides){
-        //Validate input
         if(dieCount < 1 || dieCount > 10){
             System.out.println("Please enter a valid number of dice: 1-10");
         }
