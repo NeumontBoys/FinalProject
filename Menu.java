@@ -6,12 +6,14 @@ import lib.ConsoleIO;
 public class Menu {
     //Called Classes
     Character character = new Character();
+    Gameplay game = new Gameplay();
 
     public void start(){
         //Start with character creation
         //Prompt for character name?
         raceSelect();
         classSelect();
+        game.startGame();
     }
 
     private void raceSelect() {
