@@ -31,6 +31,13 @@ public class Character extends InteractPerson {
             case 3 -> this.personRace = races[2];
             case 4 -> this.personRace = races[3];
             case 5 -> this.personRace = races[4];
+            case 6 -> this.personRace = races[5];
+            case 7 -> this.personRace = races[6];
+            case 8 -> this.personRace = races[7];
+            case 9 -> this.personRace = races[8];
+            case 10 -> this.personRace = races[9];
+            case 11 -> this.personRace = races[10];
+            case 12 -> this.personRace = races[11];
         }
     }; // sets race
 
@@ -47,15 +54,22 @@ public class Character extends InteractPerson {
         return this.classes;
     }
     public String getPersonClass(){
-        return this.personClass;
+        return personClass;
     }; // returns Class
     public void setPersonClass(int personClass){
         switch (personClass){
             case 1 -> this.personClass = classes[0];
             case 2 -> this.personClass = classes[1];
-            case 3 -> this.personClass = races[2];
-            case 4 -> this.personClass = races[3];
-            case 5 -> this.personClass = races[4];
+            case 3 -> this.personClass = classes[2];
+            case 4 -> this.personClass = classes[3];
+            case 5 -> this.personClass = classes[4];
+            case 6 -> this.personClass = classes[5];
+            case 7 -> this.personClass = classes[6];
+            case 8 -> this.personClass = classes[7];
+            case 9 -> this.personClass = classes[8];
+            case 10 -> this.personClass = classes[9];
+            case 11 -> this.personClass = classes[10];
+            case 12 -> this.personClass = classes[11];
         }
     }
 
