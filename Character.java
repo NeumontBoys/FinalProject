@@ -1,16 +1,14 @@
-package edu.neumont.oop.Model;
-
-public class Character extends InteractPerson {
+{
 
     private String personRace;
     private int raceValue;
     private String personClass;
     private int classValue;
 
-    private String[] classes = {"Wizard", "Rogue", "Sorcerer", "Barbarian", "Bard", "Archer", "Cleric", "Druid", "Warrior", "Mage"}; // 9-12
-    private String[] races = {"Human", "Troll", "Grung", "Demon", "Elf", "burb", "Dryad", "Centaur", "Dwarf", "Halfling"}; // 9-12
+    private final String[] classes = {"Wizard", "Rogue", "Sorcerer", "Barbarian", "Bard", "Archer", "Cleric", "Druid", "Warrior", "Mage"}; // 9-12
+    private final String[] races = {"Human", "Troll", "Grung", "Demon", "Elf", "burb", "Dryad", "Centaur", "Dwarf", "Halfling"}; // 9-12
 
-    public Character(){};
+    public Character(){}
     public Character(String name, int personRace, int personClass){
         setName(name);
         setRaceValue(personRace);
@@ -23,7 +21,7 @@ public class Character extends InteractPerson {
     }
     public String getPersonRace(){
         return personRace;
-    }; // returns race
+    } // returns race
     public void setPersonRace(int raceValue){
         switch (raceValue){
             case 1 -> this.personRace = races[0];
@@ -39,7 +37,7 @@ public class Character extends InteractPerson {
             case 11 -> this.personRace = races[10];
             case 12 -> this.personRace = races[11];
         }
-    }; // sets race
+    } // sets race
 
     public int getRaceValue(){
         return raceValue;
@@ -55,7 +53,7 @@ public class Character extends InteractPerson {
     }
     public String getPersonClass(){
         return personClass;
-    }; // returns Class
+    } // returns Class
     public void setPersonClass(int personClass){
         switch (personClass){
             case 1 -> this.personClass = classes[0];
