@@ -31,15 +31,27 @@ public class Menu {
     }
 
     private String racePrompt(){
-        return "";
+        return """
+                Please select a race from the following options:
+                1) Elf
+                2) Dwarf
+                3) Halfling
+                4) 
+                5) 
+                6) 
+                7) 
+                8) 
+                9) 
+                10)
+                """;
     }
 
     private void classSelect(){
         int selection = 0; //Get user input for number - Provide prompt
         switch (selection){
-            case 1: character.setPersonClass("Warrior");
+            case 1: character.setPersonClass("Rogue");
             case 2: character.setPersonClass("Mage");
-            case 3: character.setPersonClass("Rogue");
+            case 3: character.setPersonClass("Warrior");
             case 4: character.setPersonClass("");
             case 5: character.setPersonClass("");
             case 6: character.setPersonClass("");
@@ -51,6 +63,18 @@ public class Menu {
     }
 
     private String classPrompt(){
-        return "";
+        return """
+                Please select a class from the following options:
+                1) Rogue
+                2) Mage
+                3) Warrior
+                4) 
+                5) 
+                6) 
+                7) 
+                8) 
+                9) 
+                10)
+                """;
     }
 }
