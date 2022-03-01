@@ -44,8 +44,8 @@ public class Die {
         return totalRoll;
     }
     
-        public int randomGenerator (int lowBound, int upBound)
-    {
+    //Random Number Generator
+    public int randomGenerator (int lowBound, int upBound){
         int randomNumber = random.nextInt((upBound - lowBound) + 1) + lowBound;
         return randomNumber;
     }
