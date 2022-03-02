@@ -44,6 +44,11 @@ public class Die {
         return totalRoll;
     }
     
+    // Can roll singular or multiple dice
+       public int rollDice(int numOfDice, int numOfSides){
+        return numOfDice * randomGenerator(1, numOfSides);
+    }
+    
     //Random Number Generator
     public int randomGenerator (int lowBound, int upBound){
         int randomNumber = random.nextInt((upBound - lowBound) + 1) + lowBound;
