@@ -8,12 +8,14 @@ public class Menu {
     Character character = new Character();
     Gameplay game = new Gameplay();
 
+    //Start "Menu"
     public void start(){
         //Start with character creation
         new Character(ConsoleIO.promptForString("Enter character name: " + '\n', false), raceSelect(), classSelect());
         game.startGame();
     }
 
+    //Selection Menus
     private int raceSelect() {
         int selection = ConsoleIO.promptForMenuSelection(character.getRaces(), false);
         return selection - 1;
