@@ -5,27 +5,27 @@ public class MonsterFactory {
     private final Monster[] bosses = {theDuck(), shadowBrute(), lich()};
 
     // 15 monsters, 3 mini bosses, 3 bosses
-    /////////////////////////////////////////////////////////// Matthan's Creatures Below
     public Monster skeleton(){
         InteractPerson skeleton = new Monster("Skeleton");
         return (Monster) skeleton;
-    }
+    } // DONE
     public Monster slime(){
-        InteractPerson slime = new Monster("Slime");
+        InteractPerson slime = new Monster("Slime", d.randomGenerator(3, 12), 3, 1);
         return (Monster) slime;
-    }
+    } // DONE
     public Monster zombie(){
-        InteractPerson zombie = new Monster("Zombie");
+        InteractPerson zombie = new Monster("Zombie", d.randomGenerator(5, 15), d.randomGenerator(5, 10), d.randomGenerator(7, 9));
+        zombie.setHp(d.randomGenerator(5, 15));
         return (Monster) zombie;
-    }
+    } // DONE
     public Monster troll(){
-        InteractPerson troll = new Monster("Troll");
+        InteractPerson troll = new Monster("Troll", d.randomGenerator(20, 30), d.randomGenerator(7, 13), d.randomGenerator(2, 16));
         return (Monster) troll;
-    }
+    } // DONE
     public Monster ogre(){
-        InteractPerson ogre = new Monster("Ogre");
+        InteractPerson ogre = new Monster("Ogre", d.randomGenerator(15, 18), d.randomGenerator(10, 13), d.randomGenerator(5, 9));
         return (Monster) ogre;
-    }
+    } // DONE
     public Monster champMinotaur(){
         InteractPerson champMinotaur = new Monster();
         return (Monster) champMinotaur;
@@ -57,9 +57,9 @@ public class MonsterFactory {
         return (Monster) mummy;
     }
     public Monster giantFuckinRat(){
-        InteractPerson giantRat = new Monster();
+        InteractPerson giantRat = new Monster("The Rat King", d.randomGenerator(45, 55), d.randomGenerator(8, 12), d.randomGenerator(4, 18));
         return (Monster) giantRat;
-    }
+    } // DONE
     public Monster shadowBrute(){
         InteractPerson shadowBrute = new Monster();
         return (Monster) shadowBrute;
