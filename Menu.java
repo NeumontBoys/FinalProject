@@ -10,26 +10,17 @@ public class Menu {
 
     public void start(){
         //Start with character creation
-        nameSelect();
-        raceSelect();
-        classSelect();
+        new Character(ConsoleIO.promptForString("Enter character name: " + '\n', false), raceSelect(), classSelect());
         game.startGame();
     }
 
-    private void nameSelect() {
-        String name = ConsoleIO.promptForString("Enter Your Character's Name: ", false);
-        character.setName(name);
+    private int raceSelect() {
+        int selection = ConsoleIO.promptForMenuSelection(character.getRaces(), false);
+        return selection - 1;
     }
 
-    private void raceSelect() {
-        System.out.println("Please Select A Race For Your Character: ");
-        int select = ConsoleIO.promptForMenuSelection(character.getRaces(), false);
-        character.setRaceValue(select);
-    }
-
-    private void classSelect(){
-        System.out.println("Please Select A Class For Your Character: ");
-        int select = ConsoleIO.promptForMenuSelection(character.getClasses(), false);
-        character.setClassValue(select);
+    private int classSelect(){
+        int selection = ConsoleIO.promptForMenuSelection(character.getClasses(), false);
+        return selection - 1;
     }
 }
