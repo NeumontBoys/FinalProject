@@ -5,94 +5,174 @@ public class MonsterFactory {
     private final Monster[] bosses = {theDuck(), shadowBrute(), lich()};
 
     // 15 monsters, 3 mini bosses, 3 bosses
+    /////////////////////////////////////////////////////////// Matthan's Creatures Below
     public Monster skeleton(){
-        InteractPerson skeleton = new Monster("Skeleton");
-        return (Monster) skeleton;
+        if(d!= null){
+            InteractPerson skeleton = new Monster("Skeleton");
+            skeleton.setHp(d.randomGenerator(5, 8));
+            skeleton.setArmorClass(d.randomGenerator(3, 5));
+            return (Monster) skeleton;
+        }
+        return null;
     } // DONE
     public Monster slime(){
-        InteractPerson slime = new Monster("Slime", d.randomGenerator(3, 12), 3, 1);
-        return (Monster) slime;
+        if(d!=null){
+            InteractPerson slime = new Monster("Slime");
+            slime.setHp(d.randomGenerator(3, 12));
+            slime.setArmorClass(d.randomGenerator(1, 3));
+            return (Monster) slime;
+        }
+        return null;
     } // DONE
     public Monster zombie(){
-        InteractPerson zombie = new Monster("Zombie", d.randomGenerator(5, 15), d.randomGenerator(5, 10), d.randomGenerator(7, 9));
+    if(d!=null){
+        InteractPerson zombie = new Monster("Zombie");
         zombie.setHp(d.randomGenerator(5, 15));
+        zombie.setArmorClass(d.randomGenerator(5, 10));
         return (Monster) zombie;
+    }
+    return null;
     } // DONE
     public Monster troll(){
-        InteractPerson troll = new Monster("Troll", d.randomGenerator(20, 30), d.randomGenerator(7, 13), d.randomGenerator(2, 16));
-        return (Monster) troll;
+        if(d!=null){
+            InteractPerson troll = new Monster("Troll");
+            troll.setHp(d.randomGenerator(20, 30));
+            troll.setArmorClass(d.randomGenerator(7, 13));
+            return (Monster) troll;
+        }
+        return null;
     } // DONE
     public Monster ogre(){
-        InteractPerson ogre = new Monster("Ogre", d.randomGenerator(15, 18), d.randomGenerator(10, 13), d.randomGenerator(5, 9));
-        return (Monster) ogre;
+        if(d!=null){
+            InteractPerson ogre = new Monster("Ogre");
+            ogre.setHp(d.randomGenerator(15, 18));
+            ogre.setArmorClass(d.randomGenerator(10, 13));
+            return (Monster) ogre;
+        }
+        return null;
+
     } // DONE
     public Monster champMinotaur(){
-        InteractPerson champMinotaur = new Monster();
-        return (Monster) champMinotaur;
+        if(d!=null){
+            InteractPerson champMinotaur = new Monster("Champion Minotaur");
+            champMinotaur.setHp(d.randomGenerator(40,55));
+            champMinotaur.setArmorClass(d.randomGenerator(12,16));
+            return (Monster) champMinotaur;
+        }
+        return null;
     }
     public Monster theDuck(){
-        InteractPerson theDuck = new Monster();
-        return (Monster) theDuck;
+        if(d!=null){
+            InteractPerson theDuck = new Monster("The Duck");
+            theDuck.setHp(d.randomGenerator(75, 100));
+            theDuck.setArmorClass(d.randomGenerator(15, 18));
+            return (Monster) theDuck;
+        }
+        return null;
     }
     /////////////////////////////////////////////////////////// Matthan's Creatures Above
     /////////////////////////////////////////////////////////// Mabel's Creatures Below
     public Monster wisp(){
-        InteractPerson wisp = new Monster("Wisp");
-        return (Monster) wisp;
+        if(d!=null){
+            InteractPerson wisp = new Monster("Wisp");
+            return (Monster) wisp;
+        }
+        return null;
     }
     public Monster amalgamate(){
-        InteractPerson amalgamate = new Monster("Amalgamate");
-        return (Monster) amalgamate;
+        if(d!=null){
+            InteractPerson amalgamate = new Monster("Amalgamate");
+            return (Monster) amalgamate;
+        }
+        return null;
     }
     public Monster bat(){
-        InteractPerson bat = new Monster("Bat");
-        return (Monster) bat;
+        if(d!=null){
+            InteractPerson bat = new Monster("Bat");
+            return (Monster) bat;
+        }
+        return null;
     }
     public Monster mimic(){
-        InteractPerson mimic = new Monster("Mimic");
-        return (Monster) mimic;
+        if(d!=null){
+            InteractPerson mimic = new Monster("Mimic");
+            return (Monster) mimic;
+        }
+        return null;
     }
     public Monster mummy(){
-        InteractPerson mummy = new Monster("Mummy");
-        return (Monster) mummy;
+        if(d!=null){
+            InteractPerson mummy = new Monster("Mummy");
+            return (Monster) mummy;
+        }
+        return null;
+        
     }
     public Monster giantFuckinRat(){
-        InteractPerson giantRat = new Monster("The Rat King", d.randomGenerator(45, 55), d.randomGenerator(8, 12), d.randomGenerator(4, 18));
-        return (Monster) giantRat;
+        if(d!=null){
+            InteractPerson giantRat = new Monster("The Rat King");
+            return (Monster) giantRat;
+        }
+        return null;
+        
     } // DONE
     public Monster shadowBrute(){
-        InteractPerson shadowBrute = new Monster();
-        return (Monster) shadowBrute;
+        if(d!=null){
+            InteractPerson shadowBrute = new Monster();
+            return (Monster) shadowBrute;
+        }
+        return null;
     }
     /////////////////////////////////////////////////////////// Mabel's Creatures Above
     /////////////////////////////////////////////////////////// Aislin's Creatures Below
     public Monster ghost(){
-        InteractPerson ghost = new Monster("Ghost");
-        return (Monster) ghost;
+        if(d!=null){
+            InteractPerson ghost = new Monster("Ghost");
+            return (Monster) ghost;
+        }
+        return null;
     }
     public Monster goblin(){
-        InteractPerson goblin = new Monster("Goblin");
-        return (Monster) goblin;
+        if(d!=null){
+            InteractPerson goblin = new Monster("Goblin");
+            return (Monster) goblin;
+        }
+        return null;
     }
     public Monster hobgoblin(){
-        InteractPerson hobgoblin = new Monster("Hobgoblin");
-        return (Monster) hobgoblin;
+        if(d!=null){
+            InteractPerson hobgoblin = new Monster("Hobgoblin");
+            return (Monster) hobgoblin;
+        }
+        return null;
     }
     public Monster bugBear(){
-        InteractPerson bugBear = new Monster("Bug Bear");
-        return (Monster) bugBear;
+        if(d!=null){
+            InteractPerson bugBear = new Monster("Bug Bear");
+            return (Monster) bugBear;
+        }
+        return null;
     }
     public Monster construct(){
-        InteractPerson construct = new Monster("Construct");
-        return (Monster) construct;
+        if(d!=null){
+            InteractPerson construct = new Monster("Construct");
+            return (Monster) construct;
+        }
+        return null;
     }
     public Monster banshee(){
-        InteractPerson banshee = new Monster();
-        return (Monster) banshee;
+        if(d!=null){
+            InteractPerson banshee = new Monster();
+            return (Monster) banshee;
+        }
+        return null;
     }
     public Monster lich(){
-        InteractPerson lich = new Monster();
-        return (Monster) lich;
+        if(d!=null){
+            InteractPerson lich = new Monster();
+            return (Monster) lich;
+        }
+        return null;
     }
     /////////////////////////////////////////////////////////// Aislin's Creatures Above
 
