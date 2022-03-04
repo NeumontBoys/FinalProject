@@ -1,10 +1,90 @@
 package edu.neumont.oop.Controller;
 
-public class Gameplay {
-    //Properties - if any
+import edu.neumont.oop.Model.Character;
+import edu.neumont.oop.Model.Dungeon;
+import edu.neumont.oop.Model.InteractPerson;
+import edu.neumont.oop.Model.Monster;
+import edu.neumont.oop.Model.PersonFactory;
+import edu.neumont.oop.View.Menu;
+import lib.ConsoleIO;
 
-    //Start method to initialize game
+public class Gameplay {
+
+    PersonFactory pf = new PersonFactory();
+    Menu m = new Menu();
+    Dungeon dungeon = new Dungeon();
+
     public void startGame(){
+        InteractPerson pc = pf.createCharacter();
+        if (ConsoleIO.promptForBoolean(m.enterDungeonPrompt(), "Y", "N")){
+            boolean bLoop = true;
+            while (bLoop){
+                roomHandling((Character) pc);
+            }
+        }else{
+            ConsoleIO.display(m.gameOver());
+        }
 
     }
+
+    // STRING[] FOR MENU PROMPTS
+    public String[] roomsString(Dungeon dungeon){
+        String[] rooms = new String[dungeon.getDungeon().size()];
+        for (int i = 0; i < dungeon.getDungeon().size(); i++) {
+            rooms[i] = ("Room " + (i + 1));
+        }
+        return rooms;
+    }
+    public String[] monstersString(int chosenRoom){
+        String[] monsters = new String[dungeon.getDungeon().get(chosenRoom - 1).getMonsters().size()];
+        for (int i = 0; i < dungeon.getDungeon().get(chosenRoom - 1).getMonsters().size(); i++) {
+            monsters[i] = dungeon.getDungeon().get(chosenRoom - 1).getMonsters().get(i).getName();
+        }
+        return monsters;
+    }
+
+    // COMBAT
+    public void attackOrHeal(InteractPerson target, Character self, int room){
+        int aoh = ConsoleIO.promptForMenuSelection(m.attackOrHeal(), false) + 1;
+        ConsoleIO.display(aoh + "");
+        switch (aoh){
+            case 1 -> {self.attackToHit(target); ConsoleIO.display(target.getName() + ", HP: " + target.getHp()); checkMonsterDeath(room);}
+            case 2 -> self.heal();
+        }
+    }
+
+    // ROOM HANDLING
+    private int chooseRoom(){
+        ConsoleIO.display(m.chooseARoom());
+        int room = ConsoleIO.promptForMenuSelection(roomsString(dungeon), false) + 1;
+        ConsoleIO.display("Room " + room + ": ");
+        return room;
+    }
+    private Monster chooseMonsterInRoom(int room){
+        ConsoleIO.display(m.chooseAMonster());
+        int monster = ConsoleIO.promptForMenuSelection(monstersString(room), false);
+        return dungeon.getDungeon().get(room - 1).getMonsters().get(monster);
+    }
+    private void roomHandling(Character user){
+        boolean bLoop = true;
+        int room = chooseRoom();
+        while (bLoop){
+            attackOrHeal(chooseMonsterInRoom(room), user, room);
+        }
+    }
+
+    // DEATH HANDLING
+    public void checkMonsterDeath(int room){
+        for (int i = 0; i < dungeon.getDungeon().get(room).getMonsters().size(); i++) {
+            if (dungeon.getDungeon().get(room).getMonsters().get(i).isDead()){
+                dungeon.getDungeon().get(room).getMonsters().remove(i);
+            }
+        }
+    }
+
+    // TO DO LIST:
+    // GIVE DIALOGUE TO INDICATE HEAL OR ATTACK
+    // BACK AND FORTH IN COMBAT
+    // COMPLETE ROOMS , REMOVE FROM ARRAYLIST
+    // FINISH DUNGEON
 }

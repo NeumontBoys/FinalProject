@@ -1,46 +1,44 @@
+package edu.neumont.oop.Model;
+
+import lib.ConsoleIO;
+
+import java.util.ArrayList;
+
 public class Room {
 
-    private Monster[] monsters;
-    private MonsterFactory monster = new MonsterFactory();
+    private ArrayList<Monster> monsters = new ArrayList<>();
+    private PersonFactory pf = new PersonFactory();
+    private Die d = new Die();
+    private boolean isComplete = false;
 
-    public Room(){}
+    public Room(){
+        makeRoom();
+    }
 
     public int howManyMonsters(){
-        Die d = new Die();
-        int howMany = d.randomGenerator(1,5);
-        return howMany;
+        return d.randomGenerator(2, 5);
     }
 
-    public void populateArray(){
-        Die d = new Die();
-        for (int i = 0; i < getMonsters().length; i++) {
-            monsters[i] = monster.getMonsters()[d.randomGenerator(0, monster.getMonsters().length - 1)];
+    public void populateRoom(){
+        for (int i = 0; i < howManyMonsters(); i++) {
+            Monster monster = pf.getMonsters()[d.randomGenerator(0, pf.getMonsters().length - 1)];
+            monsters.add(monster);
         }
     }
 
-    public Monster[] getMonsters() {
+    private void makeRoom(){
+        howManyMonsters();
+        populateRoom();
+    }
+
+    public ArrayList<Monster> getMonsters() {
         return monsters;
     }
-    public void setMonsters(Monster[] monsters) {
-        this.monsters = monsters;
-    }
 
-    public void setMonstersSize(int howManyMonsters){
-        monsters = new Monster[howManyMonsters];
+    public boolean isComplete() {
+        return isComplete;
     }
-
-    public void displayRoom(){
-        String[] monsterNames = new String[monsters.length];
-        System.out.println("Room: ");
-        for (int i = 0; i < monsters.length; i++) {
-            monsterNames[i] = monsters[i].getName();
-        }
-        ConsoleIO.promptForMenuSelection(monsterNames, false);
-    }
-
-    public void test(){
-        setMonstersSize(howManyMonsters());
-        populateArray();
-        displayRoom();
+    public void setComplete(boolean complete) {
+        isComplete = complete;
     }
 }
