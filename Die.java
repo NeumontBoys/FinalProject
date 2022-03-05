@@ -16,7 +16,7 @@ public class Die {
         }
         //Generates random number
         int dieSides = sides + 1;
-        return random.nextInt(dieSides) - 1;
+        return randomGenerator(1, sides);
     }
 
     public int rollMultiple(int dieCount, int sides){
